@@ -11,7 +11,7 @@ using namespace std;
 
 const int N=15;
 const int K=15;
-int t,n,k,b[K],ans;
+int t,n,k,b[K],c[N],ans;
 string a[N],s;
 
 int main(){
@@ -27,10 +27,10 @@ int main(){
             foru(i,0,n-1){
                 s="";
                 foru(j,0,k-1) s+=a[i][b[j]];
-                a[i]=s;
+                c[i]=stoi(s);
             }
-            sort(a,a+n);
-            ans=min(ans,stoi(a[n-1])-stoi(a[0]));
+            sort(c,c+n);
+            ans=min(ans,c[n-1]-c[0]);
         }while(next_permutation(b,b+k));
         cout << ans << "\n";
     }
